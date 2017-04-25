@@ -16,4 +16,4 @@ HomePage.propTypes = {
 
 
 export default HomePage;
-//export default connect()(HomePage);
+// export default connect()(HomePage);

@@ -1,6 +1,6 @@
-import {Menu, Icon, Form} from 'antd';
+import { Menu, Icon, Form } from 'antd';
 import { Link } from 'dva/router';
-import React, {PropTypes} from 'react';
+import React, { PropTypes } from 'react';
 
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
@@ -22,7 +22,7 @@ class NavHeader extends React.Component {
     super(props);
     this.state = {
       current: 'mail',
-    }
+    };
   }
 
   handleClick(e) {
@@ -32,21 +32,23 @@ class NavHeader extends React.Component {
     });
   }
 
-  render () {
+  render() {
     // 如果是extends React.Component方式，需要使用bind(this)方式
     return (
-      <Menu onClick={this.handleClick.bind(this)}
-            selectedKeys={[this.state.current]}
-            mode="horizontal">
+      <Menu
+        onClick={this.handleClick.bind(this)}
+        selectedKeys={[this.state.current]}
+        mode="horizontal"
+      >
         <Menu.Item key="mail">
-          <Link to="/"> <Icon type="mail"/> 首页 </Link>
+          <Link to="/"> <Icon type="mail" /> 首页 </Link>
         </Menu.Item>
 
         <Menu.Item key="app" disabled>
-          <Link to="/"> <Icon type="appstore"/> 不可访问 </Link>
+          <Link to="/"> <Icon type="appstore" /> 不可访问 </Link>
         </Menu.Item>
 
-        <SubMenu title={<span> <Icon type="setting"/> Settings </span>}>
+        <SubMenu title={<span> <Icon type="setting" /> Settings </span>}>
           <MenuItemGroup title="Setting-1">
             <Menu.Item key="setting:1"> Option 1 </Menu.Item>
             <Menu.Item key="setting:2"> Option 2 </Menu.Item>
@@ -58,13 +60,12 @@ class NavHeader extends React.Component {
         </SubMenu>
 
         <Menu.Item key="alipay">
-          <a href="https://ant.design" target="_blank" ref="noopener noreferrer"> Ant Design</a>
+          <a href="https://ant.design" target="_blank"> Ant Design</a>
         </Menu.Item>
 
       </Menu>
     );
   }
-
 }
 
 NavHeader.propTypes = {
@@ -73,5 +74,3 @@ NavHeader.propTypes = {
 // Both of two approaches below work well
 // export default Form.create()(NavHeader);
 export default NavHeader;
-
-
